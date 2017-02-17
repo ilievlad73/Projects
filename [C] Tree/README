@@ -1,3 +1,5 @@
+Ilie Nicolae Vlad               //2015
+
 Tema consta in decodifcarea unui text, fiind furnizata modalitatea de codificare.
 Codul furnizat va fi stocat cu ajutorului unui arbore,decodificarea unui anumit caracter fiind efectuata prin parcurgearea arborelui pana la nodul asociat caracterului respectiv.
 Am implementat 2 functii : 
