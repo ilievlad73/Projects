@@ -1,0 +1,30 @@
+Ilie Nicolae Vlad 311CB
+
+Tema consta in implementarea unei structuri de tip hash table.
+Functiile necesare pentru prelucrarea tabele : 
+Set - care adauga un element in tabel si ii seteaza frecventa = 0 ;
+    - daca elemenul exista nu se modifica nimic
+    - daca lista in care trebuie inserat este mai mare decat numarul maxim de liste
+se va sterge ultimul element si se va realiza inseararea.
+    - daca numarul total de intrari din tabela este mai mare de 2*M atunci ea va fi realocata la o noua dimensiune de 2*M intrari.Daca nu se poate realiza realocarea tabela hash ramane nemodificata.
+
+Get - intoarce valoarea elementul cu cheia primita ca parametru si incrementeaza frecventa.
+Remove - elimina din tabela hash elementul cu cheia primita ca parametru
+print - afiseaza toate valorile din tabela hash
+print_line - afiseaza toate valorile dintr o anumita lista
+
+Functii folosite auxiliar : 
+	1) functieD : functia de dispersie. Calculeaza restul impartirii sumei
+	caracterelor (din "key" ; in ASCII) la numaral de bucket-uri;
+	2) GasesteCerinta: functie pentru determinarea operatiei care se aplica
+	3) AfiValue,AfisareValori - functii care sunt folosite pentru a implementa print si print_line.
+	4) compara: functia care compara 2 elemente.
+	5) cauta : functia care cauta in tabela hash - returneaza 1 daca nu gaseste elementul
+						     - returneaza 0 daca gaseste elementul
+	6)LungLista:functia care caluleazal lungimea unei liste dublu inlantuite circulare.
+	7)distrugeTHash : functie care elibereaza memoria folosita de tabela hash.
+	8)DistrugeLista:functie care elibereaza memoria unei lsite dublu inlantuite circulare.
+	9)initTHash : functie care aloca memorie pentru un tabel hash.
+	10)acolaCel : functia care aloca memorie pentru o celula de lista dublu inlantuita.
+	11) InseareOrd : functia care insereaza ordonat intr-o lista dublu inlantuita circulara.
+
