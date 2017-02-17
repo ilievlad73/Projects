@@ -1,1 +1,16 @@
-  
+Ilie Nicolae Vlad
+
+Pentru a realiza simularea unei masini Turing ne folosim de urmatoarea structura : 
+typedef struct {
+	char* in;
+	char* out;
+	int* stare_Urmatoare;
+	int* miscare_Cursor;		// 1 = R , 0 = H , -1 = L
+	int stare_Finala;		// 1 - Stare finala , 0 - nu e stare finala
+	int nr_Tranzitii;
+	int valid;
+} Stare, *TStare;
+
+Urmatoarea parte consta in parsarea fisierului de intrare si completarea structurii cu informatii.
+Caracterul vid al benzii se considera '#'.
+Dupa urmeaza simularea efectiva.
