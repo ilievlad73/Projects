@@ -1,5 +1,9 @@
 Ilie Nicolae Vlad 321 CB
 
+Se ruleaza astfel: 
+
+make ARGS = "nume_fisier" run
+
 In realizarea temei am folosit 2 interfete, pentru a putea acoperii modalitatea de a pastra nodurile adiacente,
 si pentru a acoperii tipul de nod din graf ( A,B,C) . 
 
