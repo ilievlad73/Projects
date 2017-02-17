@@ -1,0 +1,20 @@
+Tema consta in decodifcarea unui text, fiind furnizata modalitatea de codificare.
+Codul furnizat va fi stocat cu ajutorului unui arbore,decodificarea unui anumit caracter fiind efectuata prin parcurgearea arborelui pana la nodul asociat caracterului respectiv.
+Am implementat 2 functii : 
+Functia add si delete.
+Functia add  va adauga in arbore codificarea unui caracter.Daca in arbore exista o codificarea asociata se va pastra doar noua codificare.
+Functia del va sterge din arbore codificarea unui caracter.In urma acestei operatii se vor sterge toate nodurile necesare astfel incat in arbore sa nu existe cai care sa conduca la o codificare invalida.
+Functia add a fost implementat astfel : 
+Prototip:
+void AddCodificare(TArb *a,char *codificare,char info,int lungime); 	// adauga codificatie
+Se apeleaza pornind de la nodul din stanga, radacina fiind initializata intr o functie apelata anterior.
+Se parcurge arborele verificandu-se fiecare informatie din codificarea care trebuie adaugata. Daca exista litera curenta se merge in stanga altfel se merge pe fratii sai.Dupa ce am verificat toti fratii si nu am gasit litera curenta se adauga un nou frate si codificarea merge pe fratele lui stanga.
+Functia del:
+Prototip:
+void del(char info,AArb a);		//elimina informatia
+Unde info este informatia ce trebuie eliminata.
+Se elimina informata ( se pune pe 0 ) si apoi la intoarcere din recursivitate se verifica daca nodurile mai au informatie valida in ramura respectiva.
+Afisarea arborelui se face parcurgand arborele in latime.
+Pentru aceasta m-am folosit de functiile implementate la tema2 pentru a forma o coada de adrese de noduri.
+Pentru a trece pe randul urmator cand afisez coada m am folosit de o variabila auxiliar pe care o introducea inapoi in coada la fiecare pas inainte de a afisa nodurile.
+
