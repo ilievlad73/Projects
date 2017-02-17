@@ -1,4 +1,4 @@
-Ilie Nicolae Vlad
+Ilie Nicolae Vlad				//2016
 
 Pentru a realiza simularea unei masini Turing ne folosim de urmatoarea structura : 
 typedef struct {
