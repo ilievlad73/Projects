@@ -1,0 +1,63 @@
+La aceasta tema am avut de implementat niste operatii de baza pentru stive si cozi.
+Prototipurile functiilor:
+Stiva:
+void* InitS(size_t d);		  /* initializeaza stiva cu elemente de dimensiune d; */
+int Push(void* a, void* ae);  /* pune element in varful stivei */
+int Pop (void* a, void* ae);  /* extrage elementul din varful stivei la adresa ae */
+int Top (void* a, void* ae);  /* copiaza elementul din varful stivei la adresa ae */
+int VidaS(void* a);           /* test stiva vida */
+void DistrS (void** aa);      /* elibereaza intregul spatiu ocupat de stiva */
+Coada:
+void* InitQ(size_t d); /* creeaza coada vida cu elemente de dimensiune d;
+int IntrQ(void* a, void* ae); /* adauga element la sfarsitul cozii */
+int ExtrQ(void* a, void* ae); /* extrage primul element din coada la adresa ae */
+int PrimQ(void* a, void* ae); /* copiaza primul element din coada la adresa ae */
+int VidaQ(void* a);           /* test coada vida */
+void DistrQ(void** aa);
+Am avut de implementat urmatoarele functii:
+add
+ - adaugarea unui switch in rețea
+del
+ - scoaterea unui switch din rețea
+set
+ - setează mod de lucru pentru switch.
+ipmin
+ - afișarea celei mai mici adrese IPv4 a switch-urilor care funcționează in mod individual
+show
+ - afișarea cozii și a stivelor 
+
+La realizarea acestora am folosit urmatoarele functii auxiliare:
+
+TSwitch* CautaInCoada(void*a , int id); /* returneaza elem gasit altfel NULL */
+int InserareOrdCoada(void* a, void*ae); /* insereaza ordonat in coada */
+TSwitch* RemoveDinCoada(void* a, int id); 
+/* scoate elem din coada fara a elibera spatiul de memorie */
+void EliminaDinCoada(void* a, int id); /* elimina element din coada */
+void afiseazaCoadaV2(void *a,FILE* x); /* afiseaza in fisier coada */
+
+int add(TVSt* vector,int id, char* denumire,char* Ip,char* functionare, int id_stiva, char* tip,void* coada);
+//adauga switch in retea
+void IPMIN(TVSt* vector, void* coada,FILE* x); //scrie in fisier ip-ul minim din coada
+int set(TVSt* vector,int id, char* functionare,int id_stiva,char* principal,void* coada); 
+//schimba modul de functionare al unui switch
+unsigned int ConverIp(char* IP); //converteste de la IP
+void Afisare(TVSt* vector, void* coada, FILE* x); // afiseaza toate switch-urile
+int del( TVSt* vector, int id, void* coada); //scoate switch din retea
+int GasesteCerinta(char *x); // codifica operatiile 
+int fcmpQ(void* a, void* b); // functie de comparatie pentru elementele ce intra in coada
+
+int InserareOrd(void* a, void* ae); /* insereaza ordonat in stiva */
+int InserareBaza(void*a, void* ae); /* insereaza la baza stivei */
+void EliminaDinStiva(void* a, int id); /* elimina element din stiva */
+TSwitch* CautaInStiva(void* a, int id, int *B); /* returneaza elem daca l a gasit altel null */
+TSwitch* RemoveDinStiva(void* a, int id); /* scoate elementul din stiva fara a elibera memorie */
+void afiseazaStivaV2(void *a,FILE* x); /* afiseaza in fisier stiva */
+int UltimulElemStiva(void* a,void* b); /* returneaza ultimul elem din stiva */
+TVSt* InitTVSt(int nrel);
+void DistrugeStive(TVSt* stive);
+int fcmp(void* a, void* b); //functie de comparatie pentru elementele ce intra in stiva
+int InserareBaza(void*a, void* ae); // insereaza un element la baza //
+
+Codul este explicat prin comentarii aferente.
+
+
