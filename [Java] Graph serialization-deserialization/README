@@ -1,0 +1,50 @@
+Ilie Nicolae Vlad 321 CB
+
+In realizarea temei am folosit 2 interfete, pentru a putea acoperii modalitatea de a pastra nodurile adiacente,
+si pentru a acoperii tipul de nod din graf ( A,B,C) . 
+
+Interfete au fost numinte VeciniType respectiv NodABC.
+
+Pentru LIST,VECTOR si SET am folosit LinkedList,ArrayList si Hashset.
+
+Atunci cand mi am format graful initial am ales sa dau id-urile in ordine crescatoare folosind o variabila statica, pe care o incrementam.
+
+Am format 2 factory-ul pentru a genera tipul de nod A,B sau C si pentru a genera modalitatea de a stoca nodurile adiacente.
+
+Am preluat setarile initiale si le-am aplicat pe NodA,NodB,NodC.
+Daca apar setari ulterioare pastrez setarile vechi pentru a compara la o urmatoare deserializare si aplic imediat setarile noi din sistem.
+
+
+
+SERIALIZAREA:
+
+Am parcurs graful in adancime pornind de la nodul care are numele respectiv.Pentru parcurgerea in adancime,
+am adaugat in clasele NodA,NodB,NodC variabila boolean vizitat pentru a facilita parcurgerea. Dupa ce am vizitat un nod,
+am marcat aceasta variabila true.
+
+Folosind variabila "taburi" am transmis recursiv cate tab-uri se scriu la inceputul randului.
+
+Am parcurs vecinii, iar daca acestia erau vizitati am afisat <Reference class .. etc > .
+Daca gaseam ceva care nu era vizitat, mergeam recuvsiv in nodul acela si la inceputul urmatorul apel se afiseaza:
+<Object class = ... etc > 
+
+La iesirea din recursivitate am inchis toate tag-urile in ordinea in care le-am deschis.
+
+
+
+DESERIALIZAREA:
+
+In functie am avut o variabila care imi spune la ce nod sunt. Astfel am tratat separat primul obiect gasit,cu alte cuvinte
+am luat si am pus in lista de noduri adiacente primul <Object etc.... >.
+Dupa am cautat "LIST" "VECTOR" sau "SET" iar daca am gasit am mers in recursivitate pe nodul urmator.
+Daca am gasit ceva de tipul <Ref ... > atunci am adaugat legatura la nodul anterior.
+Daca am gasit ceva de tipul <Object .. > atunci am adaugat un nod nou in lista de adiacenta a nodului anterior.
+Daca gasesc o constructie de tipul "/LIST" sau "/VECTOR" sau "/SET" atunci dau break adica ma intorc cu un nivel in recursivitate si merg mai departe.
+
+Restul din functia de deserializare sunt parsari de text si de scriere in fisierul de loguri unde se compara versiunea anterioara cu cea curenta.
+
+
+Alte detalii :
+
+Pentru a implementa adaugarea unei muchii sau stergerea unei muchii sau stergerea unui nod in esenta am apelat functiile din NodA,NodB,NodC care
+la randul lor vor apela functii din clasa LinkedList sau ArrayList iar la set am fost nevoie sa folosesc un iterator pentru a realiza operatiile.
